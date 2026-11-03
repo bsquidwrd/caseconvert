@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Browser-enforced privacy: the page may only load its own files and cannot make any network connections. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Convert text to UPPERCASE, lowercase, or aLtErNaTiNg case. Runs entirely in your browser.">
+  <title>Case Convert</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Case Convert</h1>
+      <p class="tagline">Paste text, pick a case. Select part of the text to convert just that part.</p>
+    </header>
+
+    <label for="text" class="visually-hidden">Text to convert</label>
+    <textarea id="text" placeholder="Type or paste your text here…" autofocus></textarea>
+
+    <div class="case-buttons" role="group" aria-label="Convert case">
+      <button type="button" data-case="upper" aria-label="Uppercase">UPPERCASE</button>
+      <button type="button" data-case="lower" aria-label="Lowercase">lowercase</button>
+      <button type="button" data-case="alt-lower" aria-label="Alternating case, lowercase first">aLtErNaTe</button>
+      <button type="button" data-case="alt-upper" aria-label="Alternating case, uppercase first">AlTeRnAtE</button>
+    </div>
+
+    <div class="bar">
+      <p id="counts" class="counts">0 characters · 0 words</p>
+      <div class="actions">
+        <button type="button" id="copy" class="secondary">Copy</button>
+        <button type="button" id="clear" class="secondary">Clear</button>
+      </div>
+    </div>
+    <p id="status" class="visually-hidden" role="status"></p>
+
+    <noscript><p class="noscript">Case conversion needs JavaScript enabled.</p></noscript>
+  </main>
+
+  <footer>
+    <p>
+      Your text never leaves this page: there’s no tracking, nothing is saved, and the page is blocked from
+      making network requests. Browser spellcheck or extensions with access to this page may still read it.
+    </p>
+    <p><a href="https://github.com/bsquidwrd/caseconvert">Source on GitHub</a></p>
+  </footer>
+</body>
+</html>

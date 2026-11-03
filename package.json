@@ -1,0 +1,9 @@
+{
+  "name": "caseconvert",
+  "private": true,
+  "description": "Client-side text case converter. No dependencies; this file only exists to enable ES modules and `npm test`.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
